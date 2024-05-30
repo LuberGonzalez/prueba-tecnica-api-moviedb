@@ -22,3 +22,6 @@ export type MoviesActionTypes =
   | FetchMoviesRequestAction
   | FetchMoviesSuccessAction
   | FetchMoviesErrorAction;
+
+export const SAVE_MOVIE = "SAVE_MOVIE";
+export const DELETE_MOVIE = "DELETE_MOVIE";

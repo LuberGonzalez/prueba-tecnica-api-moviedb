@@ -2,6 +2,7 @@ import React from "react";
 import "./CardMovie.css";
 import { Result } from "../../types/MoviesApiTypes";
 import { IMAGES_URL } from "../../constants";
+import AddToFavorites from "../AddToFavorites/AddToFavorites";
 
 interface CardMovieProps {
   movie: Result;
@@ -16,6 +17,7 @@ const CardMovie: React.FC<CardMovieProps> = ({ movie }) => {
           backgroundImage: `url(${IMAGES_URL.URL_POSTER}/${movie.poster_path})`,
         }}
       >
+        <AddToFavorites movie={movie} />
         {/* <img src={`${IMAGES_URL.URL_POSTER}/${movie.poster_path}`} alt={movie.original_title} className="card-movie__image" /> */}
         {/* <div></div>
       <div className="card-movie__content">

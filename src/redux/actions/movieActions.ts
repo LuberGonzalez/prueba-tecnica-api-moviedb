@@ -3,9 +3,11 @@ import { ROUTES_API } from "../../constants";
 import { getData } from "../../services/apiServices";
 import { ResponseMovieDB } from "../../types/MoviesApiTypes";
 import {
+  DELETE_MOVIE,
   FETCH_MOVIES_ERROR,
   FETCH_MOVIES_REQUEST,
   FETCH_MOVIES_SUCCESS,
+  SAVE_MOVIE,
 } from "../types/movieTypes";
 import { RootState } from "@reduxjs/toolkit/query";
 import { AnyAction } from "redux";
@@ -38,5 +40,19 @@ export const getMovies = (): ThunkAction<
         payload: errorMessage,
       });
     }
+  };
+};
+
+export const saveMovie = (movieId: string) => {
+  return {
+    type: SAVE_MOVIE,
+    payload: movieId,
+  };
+};
+
+export const deleteMovie = (movieId: string) => {
+  return {
+    type: DELETE_MOVIE,
+    payload: movieId,
   };
 };
