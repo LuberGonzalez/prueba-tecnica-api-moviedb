@@ -1,27 +1,33 @@
 import { Button } from "react-bootstrap";
+import { Result } from "../../types/MoviesApiTypes";
 import "./MovieSlider.css";
+import { IMAGES_URL } from "../../constants";
 
-const MovieSlider = () => {
+interface MovieSliderProps {
+  movie: Result;
+}
+
+const MovieSlider: React.FC<MovieSliderProps> = ({ movie }) => {
   return (
     <div
       className="hero-slide__item"
       style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/original//qrGtVFxaD8c7et0jUtaYhyTzzPg.jpg)`,
+        backgroundImage: `url(${IMAGES_URL.URL_POSTER_BACK}${movie.backdrop_path})`,
       }}
     >
       <div className="hero-slide__item__content container">
         <div className="hero-slide__item__content__info">
-          <h2 className="title">TITLE</h2>
-          <div className="overview">OVERVIEW</div>
+          <h2 className="title">{movie.original_title}</h2>
+          <div className="overview">{movie.overview}</div>
           <div className="btns">
-            <Button>Watch Now</Button>
-            <Button>Watch Trailer</Button>
+            <Button>Ver Ahora</Button>
+            <Button>Ver Trailer</Button>
           </div>
         </div>
         <div className="hero-slide__item__content__poster">
           <img
-            src="https://image.tmdb.org/t/p/w500//2YqZ6IyFk7menirwziJvfoVvSOh.jpg"
-            alt=""
+            src={`${IMAGES_URL.URL_POSTER}/${movie.poster_path}`}
+            alt={movie.original_title}
           />
         </div>
       </div>

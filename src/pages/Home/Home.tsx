@@ -29,8 +29,6 @@ const Home = () => {
 
   const moviesPopular: Result[] = moviesDataPopular?.results ?? [];
 
-  console.log(moviesPopular);
-
   useEffect(() => {
     dispatch(getMovies());
   }, [dispatch]);

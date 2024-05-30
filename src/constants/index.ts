@@ -26,4 +26,5 @@ export const ROUTES_API = {
 
 export const IMAGES_URL = {
   URL_POSTER: `https://image.tmdb.org/t/p/w500`,
+  URL_POSTER_BACK: "https://image.tmdb.org/t/p/original/",
 };

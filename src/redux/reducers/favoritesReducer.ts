@@ -14,7 +14,7 @@ const initialState: FavoritesState = {
 
 const favoritesReducer = (
   state = initialState,
-  action: { type: string; payload: any },
+  action: { type: string } & Record<string, unknown>,
 ) => {
   switch (action.type) {
     case ADD_TO_FAVORITES:

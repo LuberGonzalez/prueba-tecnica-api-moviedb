@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,7 +7,16 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "./HeroSlider.css";
 import MovieSlider from "../MovieSlider/MovieSlider";
+import { useSelector } from "react-redux";
+import { ResponseMovieDB, Result } from "../../types/MoviesApiTypes";
+import { RootState } from "../../redux/reducers";
 const HeroSlider: React.FC = () => {
+  const moviesData: ResponseMovieDB = useSelector(
+    (state: RootState) => state?.movies?.data,
+  );
+
+  const movies: Result[] = moviesData.results;
+
   const progressCircle = useRef<SVGSVGElement>(null);
 
   const progressContent = useRef<HTMLSpanElement>(null);
@@ -41,15 +50,15 @@ const HeroSlider: React.FC = () => {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="swiper"
       >
-        <SwiperSlide>
-          <MovieSlider />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MovieSlider />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MovieSlider />
-        </SwiperSlide>
+        {movies && movies.length > 0 ? (
+          movies.map((movie, index) => (
+            <SwiperSlide key={index}>
+              <MovieSlider key={index} movie={movie} />
+            </SwiperSlide>
+          ))
+        ) : (
+          <p>No hay películas disponibles.</p>
+        )}
         <div className="autoplay-progress" slot="container-end">
           <span ref={progressContent}></span>
         </div>
