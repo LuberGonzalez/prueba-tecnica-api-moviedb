@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](///compare/v1.5.0...v1.5.1) (2024-05-30)
+
+### Bug Fixes
+
+- :bug: Se corrigio que se eliminara el favorito. c8778f9
+
 ## [1.5.0](///compare/v1.4.0...v1.5.0) (2024-05-30)
 
 ### Features
