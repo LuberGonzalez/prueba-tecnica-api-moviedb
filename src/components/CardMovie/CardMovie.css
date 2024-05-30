@@ -1,0 +1,45 @@
+.card-movie {
+  width: 250px;
+  height: 350px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center center;
+}
+
+.card-movie__image {
+  width: 100%;
+  height: auto;
+}
+
+.card-movie__content {
+  padding: 14px;
+}
+
+.card-movie__title {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  height: 50px;
+  font-weight: bold;
+}
+
+.card-movie__release-date {
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.card-movie__rating {
+  display: flex;
+  align-items: center;
+}
+
+.card-movie__rating-icon {
+  font-size: 1.2rem;
+  margin-right: 4px;
+}
+
+.card-movie__rating-value {
+  font-weight: bold;
+}
