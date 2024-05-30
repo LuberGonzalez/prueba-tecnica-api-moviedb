@@ -36,3 +36,29 @@ Se valorará:
 - Para que la información no desaparezca cuando recarguéis u os salgáis de la pantalla de Wishlist, deberéis de usar la persistencia de datos.
 
 **Dicho esto, ¡mucha suerte y a por ello!**
+
+### Uso
+
+Aqui se proporciona como utilizar el repositorio
+
+### Clonación
+
+Para clonar este repositorio:
+
+**git clone https://github.com/LuberGonzalez/prueba-tecnica-api-moviedb.git**
+
+### Instalación
+
+Para instalar las dependencias del proyecto:
+
+**npm install**
+
+### Ejecución
+
+Para ejecutar el servidor localmente:
+
+**npm run dev**
+
+Una vez que el servidor esté en funcionamiento, puedes acceder a tu aplicación en [http://localhost:4000](http://localhost:4000).
+
+![Imagen Demo](/src/assets/prueba-tecnica-api-moviedb.png)
