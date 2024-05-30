@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](///compare/v1.4.0...v1.5.0) (2024-05-30)
+
+### Features
+
+- :lipstick: Se mejoro el componente para mostrar los slider de las peliculas actuales. aeafe56
+
 ## [1.4.0](///compare/v1.3.0...v1.4.0) (2024-05-30)
 
 ### Features
