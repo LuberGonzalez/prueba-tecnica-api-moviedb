@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addToFavorites,
-  removeFromFavorites,
-} from "../../redux/actions/favoritesActions";
 import { RootState } from "../../redux/reducers";
 import { Result } from "../../types/MoviesApiTypes";
 import "./AddToFavorites.css";
 import Alert from "../Alert/Alert";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../redux/actions/favoritesActions";
 
 interface AddToFavoritesProps {
   movie: Result;

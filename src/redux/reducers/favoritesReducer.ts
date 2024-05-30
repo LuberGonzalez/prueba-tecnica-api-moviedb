@@ -9,7 +9,7 @@ interface FavoritesState {
 }
 
 const initialState: FavoritesState = {
-  favorites: [],
+  favorites: JSON.parse(localStorage.getItem("favorites") || "[]"),
 };
 
 const favoritesReducer = (
@@ -20,13 +20,13 @@ const favoritesReducer = (
     case ADD_TO_FAVORITES:
       return {
         ...state,
-        favorites: [...state.favorites, action.payload],
+        favorites: [...state.favorites, action.payload as Result],
       };
     case REMOVE_FROM_FAVORITES:
       return {
         ...state,
         favorites: state.favorites.filter(
-          (movie) => movie.id !== action.payload,
+          (fav) => fav.id !== (action.payload as number),
         ),
       };
     default:

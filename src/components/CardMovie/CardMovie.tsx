@@ -6,21 +6,20 @@ import AddToFavorites from "../AddToFavorites/AddToFavorites";
 
 interface CardMovieProps {
   movie: Result;
+  onFavoriteChange?: () => void;
 }
 
-const CardMovie: React.FC<CardMovieProps> = ({ movie }) => {
+const CardMovie: React.FC<CardMovieProps> = ({ movie, onFavoriteChange }) => {
   return (
-    <>
-      <div
-        className="card-movie"
-        style={{
-          backgroundImage: `url(${IMAGES_URL.URL_POSTER}/${movie.poster_path})`,
-        }}
-      >
-        <AddToFavorites movie={movie} />
-      </div>
+    <div
+      className="card-movie col-lg-3 col-md-6 col-sm-6"
+      style={{
+        backgroundImage: `url(${IMAGES_URL.URL_POSTER}/${movie.poster_path})`,
+      }}
+    >
+      <AddToFavorites movie={movie} onFavoriteChange={onFavoriteChange} />
       <h2 className="card-movie__title">{movie.original_title}</h2>
-    </>
+    </div>
   );
 };
 
